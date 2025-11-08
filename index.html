@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación Cumpleaños Alex 2025</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Banner superior -->
+    <div class="top-banner">
+        <p><span class="info-icon">💡</span> Te esperamos el 22-11-2025 para Bauti-Cumple</p>
+    </div>
+
+    <!-- Confeti decorativo -->
+    <div class="confetti-container">
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+    </div>
+
+    <!-- Contenedor del video inicial -->
+    <div id="video-container" class="video-container">
+        <video id="intro-video" autoplay muted playsinline>
+            <source src="videos/video.MP4" type="video/mp4">
+            Tu navegador no soporta el video.
+        </video>
+        <button id="skip-button" class="skip-button">Saltar intro</button>
+    </div>
+
+    <!-- Contenedor de la tarjeta de invitación -->
+    <div id="card-container" class="card-container hidden">
+        <div class="card-wrapper">
+            <div class="rotation-hint">
+                <img src="imagenes/icono de rotacion.png" alt="Girar">
+            </div>
+            <div class="card">
+                <div class="card-face card-front">
+                    <img src="imagenes/Frente.jpg?v=5" alt="Frente de la invitación">
+                </div>
+                <div class="card-face card-back">
+                    <img src="imagenes/Dorso.JPG?v=5" alt="Dorso de la invitación">
+                </div>
+            </div>
+        </div>
+        <p class="instruction">Toca la tarjeta para girar <span class="map-icon"><img src="imagenes/mapa.png" alt="mapa"> ⬇️</span></p>
+        
+        <!-- Enlaces a ubicaciones -->
+        <div class="locations">
+            <a href="https://maps.app.goo.gl/YgyUqXxgJ1jc7srz6" target="_blank" class="location-btn">
+                <span class="icon">📍</span>
+                <span class="text">Ubicación del Bautismo<br><small>11:30 hs</small></span>
+            </a>
+            <a href="https://maps.app.goo.gl/ewuPKkPj5B3veZaU9" target="_blank" class="location-btn">
+                <span class="icon">🎉</span>
+                <span class="text">Ubicación del Cumpleaños<br><small>14:00 hs</small></span>
+            </a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
