@@ -115,8 +115,6 @@ body {
     letter-spacing: 2px;
     text-transform: uppercase;
     text-shadow: 
-        3px 3px 0px rgba(0, 0, 0, 0.8),
-        -1px -1px 0px rgba(255, 255, 255, 0.3),
         0 0 20px rgba(255, 215, 0, 0.8),
         0 0 40px rgba(255, 215, 0, 0.4);
     animation: bannerPulse 3s ease-in-out infinite;
@@ -154,15 +152,11 @@ body {
 @keyframes bannerPulse {
     0%, 100% {
         text-shadow: 
-            3px 3px 0px rgba(0, 0, 0, 0.8),
-            -1px -1px 0px rgba(255, 255, 255, 0.3),
             0 0 20px rgba(255, 215, 0, 0.8),
             0 0 40px rgba(255, 215, 0, 0.4);
     }
     50% {
         text-shadow: 
-            3px 3px 0px rgba(0, 0, 0, 0.8),
-            -1px -1px 0px rgba(255, 255, 255, 0.4),
             0 0 30px rgba(255, 215, 0, 1),
             0 0 50px rgba(255, 215, 0, 0.6),
             0 0 70px rgba(255, 140, 0, 0.4);
@@ -985,28 +979,5 @@ body::before {
         right: 10px;
         padding: 6px 12px;
         font-size: 11px;
-    }
-}
-
-/* Para dispositivos táctiles */
-@media (hover: none) {
-    .card {
-        animation: autoFlip 6s infinite;
-    }
-    
-    @keyframes autoFlip {
-        0%, 45% {
-            transform: rotateY(0deg);
-        }
-        50%, 95% {
-            transform: rotateY(180deg);
-        }
-        100% {
-            transform: rotateY(360deg);
-        }
-    }
-    
-    .instruction {
-        display: none;
     }
 }

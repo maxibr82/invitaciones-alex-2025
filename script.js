@@ -12,7 +12,7 @@ function showCard() {
         videoContainer.style.display = 'none';
         cardContainer.classList.remove('hidden');
         document.body.style.overflow = 'auto';
-    }, 1000); // Aumentado a 1 segundo para coincidir con la animación CSS
+    }, 1000);
 }
 
 // Event listener para cuando el video termine
@@ -27,17 +27,27 @@ introVideo.addEventListener('error', () => {
     showCard();
 });
 
-// Intentar reproducir el video con audio después de la interacción del usuario
-let firstInteraction = true;
-document.addEventListener('click', () => {
-    if (firstInteraction && introVideo.paused) {
-        introVideo.muted = false;
-        introVideo.play().catch(e => {
-            console.log('No se pudo reproducir con audio:', e);
-        });
-        firstInteraction = false;
+// Detectar si el video se quedó pausado y no puede reproducirse
+let autoplayTimeout = setTimeout(() => {
+    if (introVideo.paused) {
+        console.log('Video no se reprodujo automáticamente, mostrando tarjeta');
+        showCard();
     }
-}, { once: true });
+}, 1500);
+
+// Limpiar timeout si el video empieza a reproducirse
+introVideo.addEventListener('play', () => {
+    clearTimeout(autoplayTimeout);
+});
+
+// Intentar forzar la reproducción del video
+const playPromise = introVideo.play();
+if (playPromise !== undefined) {
+    playPromise.catch(error => {
+        console.log('Autoplay bloqueado, mostrando tarjeta:', error);
+        showCard();
+    });
+}
 
 // Funcionalidad de la tarjeta - Solo toque/click para girar
 const card = document.querySelector('.card');
